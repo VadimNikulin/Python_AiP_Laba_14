@@ -25,7 +25,6 @@ class IceCreamStand(Restaurant):
             "Станканчик": []
         }
 
-
     def display_flavors(self):
         if self.flavors:
             print("Доступные типы мороженного:")
@@ -33,8 +32,6 @@ class IceCreamStand(Restaurant):
                 print(f"- {flavor}")
         else:
             print("Доступных типов мороженного нет.")
-
-
 
     def add_flavor(self, new_flavor):
         self.flavors.append(new_flavor)
@@ -54,13 +51,21 @@ class IceCreamStand(Restaurant):
         else:
             print(f"Мороженного типа '{ice_cream_type}' нет в меню.")
 
-
     def display_ice_cream_types(self):
         for ice_cream_type, flavors in self.ice_cream_types.items():
             if flavors:
                 print(f"\n{ice_cream_type.replace('_', ' ').title()}:")
                 for flavor in flavors:
                     print(f"- {flavor}")
+
+    def describe_moroshenki(self):
+        print(f"Название ресторана: {self.restaurant_name}")
+        print(f"Адрес: {self.location}")
+        print(f"Время работы: {self.opening_hours}")
+        print(f"Тип кухни: {self.cuisine_type}")
+        print(f"Рейтинг: {self.rating}")
+
+
 
 morozhenka = IceCreamStand("Мороженка", "Мороженное", "Ударников д. 30", "8:30 - 19:00")
 morozhenka.add_flavor("Шоколадное")
@@ -70,7 +75,7 @@ morozhenka.add_flavor("Вишневое")
 
 morozhenka.add_ice_cream_type("Рожок", ["Шоколадный", "Вишневый"])
 morozhenka.add_ice_cream_type("Станканчик", ["Ванильный", "Со вкусом манго"])
-morozhenka.describe_restaurant()
+morozhenka.describe_moroshenki()
 
 morozhenka.display_ice_cream_types()
 
